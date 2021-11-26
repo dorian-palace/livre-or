@@ -1,6 +1,6 @@
 <footer class="footer">
         <div class="afooter">
-            <ul>
+            <ul class="footer" >
                 <li><a href="https://github.com/dorian-palace/livre-or">Repo github</a></li>
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="inscription.php">Inscription</a></li>
@@ -11,8 +11,3 @@
             </ul>
         </div>
     </footer>
-</body>
-</html>
-
-</body>
-</html>

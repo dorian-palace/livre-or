@@ -2,14 +2,8 @@
 session_start();
 ?>
 <?php  
-require 'elements/sqlconnect.php';
-?>
-<?php
-require 'elements/header.php';
-?>
-<?php
-require 'elements/footer.php';
-?>
+require 'elements/sqlconnect.php';?>
+
 
 <?php
 
@@ -71,21 +65,27 @@ else{
 
 
 
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Livre d'or</title>
+</head>
+<body>
+<?php require'elements/header.php'; ?>
 
-<main>
-<form  name="inscription" method="POST" action="" >
+    <form name="inscription" method="POST" action="" >
+        <legend><h1 id="h2inscription">Inscription</h1></legend>
+        Login<br>
+        <input type="text" name="login" value="" autocomplete="off" required><br>
+        Mot de passe<br>
+        <input type="password" name="password" value="" autocomplete="off" required><br>
+        Confirmation de mot de passe<br>
+        <input type="password" name="confirm" value="" autocomplete="off" required><br>
+        <br/><br/>
+        <input id="inscriptioninput" type="submit" name="envoi" value="Inscription !">
+    </form>
 
+<?php require'elements/footer.php'; ?>
 
-    <legend><h1 id="h2inscription">Inscription</h1></legend>
-    Login<br>
-    <input type="text" name="login" value="" autocomplete="off" required><br>
-    Mot de passe<br>
-    <input type="password" name="password" value="" autocomplete="off" required><br>
-    Confirmation de mot de passe<br>
-    <input type="password" name="confirm" value="" autocomplete="off" required><br>
-    <br/><br/>
-    <input id="inscriptioninput" type="submit" name="envoi" value="Inscription !">
+</body>
 
-
-</form>
-</main>

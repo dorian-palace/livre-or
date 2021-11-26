@@ -1,15 +1,8 @@
 <?php
 session_start();
 ?>
-<?php  
-require 'elements/sqlconnect.php';
-?>
-<?php
-require 'elements/header.php';
-?>
-<?php
-require 'elements/footer.php';
-?>
+
+
 <?php
 
 if(isset($_POST['connexion'])){
@@ -48,8 +41,16 @@ if(!empty($login) && !empty($password)){
 }
 
 ?>
-<main  >
-<form  action="#" method="post">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Livre d'or</title>
+</head>
+<body>
+<?php require'elements/header.php'; ?>
+<form class="form1" action="#" method="post">
 
 <h1 id="h1co" >Connexion</h1>
 
@@ -63,4 +64,9 @@ if(!empty($login) && !empty($password)){
 <input id="log1" type="submit" name="connexion" value="Connexion !" require>
 </div>
 </form>
-</main>
+
+
+<?php
+require 'elements/footer.php';
+?>
+</body>

@@ -4,12 +4,8 @@ session_start();
 <?php  
 require 'elements/sqlconnect.php';
 ?>
-<?php
-require 'elements/header.php';
-?>
-<?php
-require 'elements/footer.php';
-?>
+
+
 
 <?php
 if(isset($_SESSION['id'])){
@@ -40,8 +36,17 @@ if(isset($_SESSION['id'])){
     }
 }
 ?>
-<main>
-<form  method="POST" action="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Livre d'or</title>
+</head>
+<body>
+<?php require'elements/header.php'; ?>
+<form class="form1" method="POST" action="">
 <h1>Modifier vos informations</h1>
 	            <input type="text" name="newlogin" placeholder="login" value="<?php echo @$user['login'] ?>" /><br /><br />
 	            <input type="password" name="newpassword1" placeholder="password" /><br /><br />
@@ -49,4 +54,7 @@ if(isset($_SESSION['id'])){
 	            <br /><br />
 	            <input type="submit" name="modification" value="Modifier !" />
 	         </form>
-</main>
+
+             <?php require'elements/footer.php'; ?>
+
+</body>

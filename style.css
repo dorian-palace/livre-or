@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');/*navbar*/
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 body{
     min-height: 100vh;
     justify-content: space-between;
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(livre.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(livre.jpg);
+    font-family: 'Poppins', sans-serif;
      
 }
 
@@ -38,6 +38,14 @@ header{
     text-decoration: none;
 }
 
+h1, h2, p{
+    text-align: center;
+    color: white;
+}
+
+.h2inscription{
+    text-align: center;
+}
 
 footer{
     background-color: beige;
@@ -66,9 +74,24 @@ input[type=submit]{
     color: black;
     cursor: pointer;
     border-radius: 5%;
+    background-color:beige;
 }
 
+input{
+    height: 20px;
+    width: 200px;
+}
 
+textarea{
+    height: 350px;
+    width: 350px;
+}
 
- 
+.commentor{
+    color: white;
+    display: flex;
+    justify-content: center;    
+    line-height: 3em;
+    font-weight: bolder;
+}
 

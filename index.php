@@ -19,9 +19,26 @@ require 'elements/sqlconnect.php';
 <?php
 require 'elements/header.php';
 ?>
+<h1>Livre d'or</h1>
     <main>
-        <article>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo sapiente vero id numquam modi, inventore dicta minima molestias delectus voluptates non laboriosam eveniet perferendis nobis distinctio et corrupti rerum repellendus?</article>
+        <h2>Connecte toi et signe le livre d'or !</h2>
     </main>
+
+    <div class="indexcoin">
+<form method="POST" action="connexion.php">
+<input type="submit" name="connexion" value="connexion" >
+</form>
+
+<form method="POST" action="inscription.php">
+<input type="submit" name="inscription" value="inscription" >
+</form>
+
+<form method="POST" action="deconnexion.php">
+<input type="submit" name="deconnexion" value="deconnexion" >
+</form>
+
+</div>
+
     <?php
 require 'elements/footer.php';
 ?>

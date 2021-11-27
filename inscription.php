@@ -52,7 +52,7 @@ else{
     $stmt->bindParam(':password' ,$passwordsha);
 
     if($stmt->execute()){
-        echo "Bienvenue<br/>";
+        header("Location: commentaire.php");
     }
     else{
         $error = "Erreur: "; $e->getMessage();
@@ -74,13 +74,13 @@ else{
 <?php require'elements/header.php'; ?>
 
     <form name="inscription" method="POST" action="" >
-        <legend><h1 id="h2inscription">Inscription</h1></legend>
-        Login<br>
-        <input type="text" name="login" value="" autocomplete="off" required><br>
-        Mot de passe<br>
-        <input type="password" name="password" value="" autocomplete="off" required><br>
-        Confirmation de mot de passe<br>
-        <input type="password" name="confirm" value="" autocomplete="off" required><br>
+        <h1 id="h2inscription">Inscription</h1>
+        <br>
+        <input type="text" name="login" value="Login" autocomplete="off" required><br>
+        <br>
+        <input type="password" name="password" value="Password" autocomplete="off" required><br>
+        <br>
+        <input type="password" name="confirm" value="password" autocomplete="off" required><br>
         <br/><br/>
         <input id="inscriptioninput" type="submit" name="envoi" value="Inscription !">
     </form>

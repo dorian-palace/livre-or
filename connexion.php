@@ -1,16 +1,16 @@
 <?php
 session_start();
 ?>
-
+<?php require 'elements/sqlconnect.php';?>
 
 <?php
 
 if(isset($_POST['connexion'])){
 
-$login = htmlspecialchars($_POST['login']);
-$password = sha1($_POST['password']);
+@$login = htmlspecialchars($_POST['login']);
+@$password = sha1($_POST['password']);
 
-if(!empty($login) && !empty($password)){
+if(!empty(@$login) && !empty(@$password)){
 
     $requser = $bdd->prepare("SELECT * FROM utilisateurs WHERE login= :login AND password= :password");
     $requser->bindValue(':login', $login); 
@@ -32,9 +32,10 @@ if(!empty($login) && !empty($password)){
   header("location: livreor.php" );
  }
 
-}else{
+}
+else{
 
-    echo '<p class="erreur">'.'Mauvais identifint ou mot de passe'. '</p>';
+    header("Location: connexion.php");
 }
 }
 

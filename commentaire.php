@@ -10,9 +10,9 @@ require 'elements/sqlconnect.php';
 
 try{ 
 if(isset($_SESSION['id'])){
-    $getid = $_SESSION['id'];
+    @$getid = $_SESSION['id'];
     $usercom = $bdd->prepare('SELECT * FROM utilisateurs WHERE id = ?');
-    $usercom->execute(array($getid));
+    $usercom->execute(array(@$getid));
     $usercom = $usercom->fetch();
 
     if(isset($_POST['submit_commentaire'])){
@@ -23,7 +23,7 @@ if(isset($_SESSION['id'])){
             if($_SESSION['id']) {
 
 	            $ins = $bdd->prepare('INSERT INTO commentaires (commentaire, id_utilisateur, date) VALUES (?,?,NOW())');
-	            $ins->execute(array($commentaire,$getid));
+	            $ins->execute(array($commentaire,@$getid));
 	            $c_msg = "<span style='color:green'>Votre commentaire a bien été posté</span>";
 	         }
 	      } else {
@@ -39,7 +39,7 @@ catch(PDOException $e){
 }
 
 $commentaires = $bdd->prepare('SELECT * FROM commentaires WHERE commentaire = ? ORDER BY id DESC');
-	   $commentaires->execute(array($getid));
+	   $commentaires->execute(array(@$getid));
 ?>
 
 <head>

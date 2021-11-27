@@ -7,41 +7,21 @@ require 'elements/sqlconnect.php';
    <?php require'elements/header.php'; ?>
 
 <?php
-
-try{
-
-//INNER JOIN
-$allcomment = $bdd->query('SELECT * FROM commentaires   ORDER BY id DESC');
+$insert = $bdd->prepare("SELECT *FROM utilisateurs INNER JOIN commentaires ON utilisateurs.id  = commentaires.id_utilisateur ");
+$comment  = $insert->execute();
 ?>
 
-<h1>Tout les commentaires : </h1>
+<div class="commentor">
+    <?php
+while($comment= $insert->fetch()){
 
-<?php
+   echo  $comment['login'] .':'. ' '. $comment['commentaire'] .'   '. $comment['date']. '<br/> <br /><br/>' ;
 
-while($comm = $allcomment->fetch()){
-
-$comm['id_utilisateur'] = $_SESSION['id'];
+}
 ?>
-
-<div class="commentaire">
-
-
-
-<ul>
-<li><?php echo $comm['commentaire'] . ' '. ':'. $comm['date']  ?></li>
-</ul>
-
 </div>
-<?php
 
-}
-} catch (PDOException $e) {
 
-echo 'echec : ' . $e->getMessage();
-}
-
-?>
-<h2> <a href="commentaire.php">Poster un commentaire </a></h2>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
